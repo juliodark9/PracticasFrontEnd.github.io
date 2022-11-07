@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contactos</title>
+    <link rel="stylesheet" href="src/css/General.css" />
+    <link rel="stylesheet" href="src/css/Orden.css" />
+  </head>
+  <body>
+    <div class="animation">
+      <div class="animations-moves">🎃</div>
+      <div class="animations-moves">👻</div>
+      <div class="animations-moves">🌕</div>
+      <div class="animations-moves">🕸️</div>
+    </div>
+    <header>
+      <img
+        src="src/Image/Logo.png"
+        alt="Logos"
+        style="border-radius: 80px; width: 10%"
+      />
+      <h5>ODISEA</h5>
+      <hr />
+      <nav class="menu">
+        <a href="Index.html">Inicio</a>
+        <a href="facebook.com">Administrador</a>
+        <a href="Contacts.html">Contactos</a>
+      </nav>
+      <div class="light_mode">
+        <input type="checkbox" id="tema" />
+        <label for="tema">
+          <span class="material-symbols-outlined">Modo oscuro </span>
+        </label>
+      </div>
+    </header>
+    <hr />
+
+    <section>
+      <div class="card" id="carta">
+        <header>En Contacto</header>
+
+        <label for="Drip">Calle : Enrique Segobiano del Alba</label>
+        <br>
+        <label >Email: Encontacto@gmail.com</label>
+        <br>
+        <label for="">Visit</label>
+        <br>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d104070.52557647208!2d-99.13378753472666!3d19.651107339954045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3f349e545416f46!2sAlberca%20magnolias!5e0!3m2!1ses-419!2smx!4v1667782041026!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>           
+      </div>
+    </section>
+    <hr>
+    <footer>
+      <label for="">Derechos Reservados 2022 </label>
+    </footer>
+
+    <script>
+      setTheme = () => {
+        let themeToggler = document.querySelector("#tema");
+        themeToggler.checked = false;
+        if (localStorage.getItem("darkmode")) {
+          console.log(localStorage.getItem("darkmode"));
+          document.documentElement.className = "dark";
+          themeToggler.checked = true;
+        } else {
+        }
+        themeToggler.addEventListener("change", function () {
+          if (this.checked) {
+            document.documentElement.className = "dark";
+            localStorage.setItem("darkmode", true);
+          } else {
+            localStorage.removeItem("darkmode");
+            document.documentElement.className = "light";
+          }
+        });
+      };
+
+      setTheme();
+    </script>
+  </body>
+</html>

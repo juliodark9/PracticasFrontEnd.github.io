@@ -1,12 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    HOLA MUNDO
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pastelería</title>
+    <link rel="stylesheet" href="src/css/General.css" />
+    <link rel="stylesheet" href="src/css/Orden.css" />
+  </head>
+  <body>
+    <div class="animation">
+      <div class="animations-moves">🎃</div>
+      <div class="animations-moves">👻</div>
+      <div class="animations-moves">🌕</div>
+      <div class="animations-moves">🕸️</div>
+    </div>
+    <header>
+      <img
+        src="src/Image/Logo.png"
+        alt="Logos"
+        style="border-radius: 80px; width: 10%"
+      />
+      <h5>ODISEA</h5>
+      <hr>
+      <nav class="menu">
+        <a href="Index.html">Inicio</a>
+        <a href="facebook.com">Administrador</a>
+        <a href="Contacts.html">Contactos</a>
+      </nav>
+      <div class="light_mode">
+        <input type="checkbox" id="tema" />
+        <label for="tema">
+          <span class="material-symbols-outlined">Modo oscuro </span>
+        </label>
+      </div>
+    </header>
+<hr>
+    <main>
+      <h1>Pastelería ODISEA</h1>
+      <p>Conoce y disfruta de nuestros productos</p>
+      <p>
+        40 diferentes pasteles de línea, galletas, repostería y artículos de
+        fiesta para dar ese toque especial a tu celebración
+      </p>
+      <div class="detalle-pedido">
+        <fieldset>
+          <legend class="tile">Selecciona un sabor:</legend>
+          <div class="option-checkbox">
+            <input
+              type="checkbox"
+              id="vainilla"
+              name="flavor"
+              value="vainilla"
+              checked
+            />
+            <label for="vainilla">vainilla - 40 MXN</label>
+          </div>
+
+          <div class="option-checkbox">
+            <input
+              type="checkbox"
+              id="Chocolate"
+              name="flavor"
+              value="Chocolate"
+            />
+            <label for="Chocolate">Chocolate - 30 MXN</label>
+          </div>
+
+          <div class="option-checkbox">
+            <input type="checkbox" id="Fresa" name="flavor" value="Fresa" />
+            <label for="Fresa">Fresa - 20 MXN</label>
+          </div>
+        </fieldset>
+        <!-- sabor -->
+        <fieldset>
+          <legend class="tile">Selecciona un adorno:</legend>
+          <div class="option-checkbox">
+            <input
+              type="checkbox"
+              id="Floral"
+              name="addon"
+              value="Floral"
+              checked
+            />
+            <label for="Floral">Floral - 30 MXN</label>
+          </div>
+
+          <div class="option-checkbox">
+            <input type="checkbox" id="3d" name="addon" value="3d" />
+            <label for="3d">3d - 50 MXN</label>
+          </div>
+
+          <div class="option-checkbox">
+            <input type="checkbox" id="Drip" name="addon" value="Drip" />
+            <label for="Drip">Drip - 50 MXN</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend class="tile">Datos del Cliente:</legend>
+          <form action="">
+            <div class="info-client">
+              <label for="nombre">Nombre:</label>
+              <input type="text" id="nombre" />
+              <br />
+              <label for="numero">Numero de teléfono:</label>
+              <input type="number" id="numero" />
+              <br />
+              <label for="correo">Correo electrónico:</label>
+              <input type="email" id="correo" />
+              <br />
+              <label for="descripcion">Descripción</label>
+              <textarea name="descripcion" id="descripcion" rows="5"></textarea>
+              <br>
+                <label for="Pasteles">Cantidad de Pasteles a llevar</label>
+                <input type="number" name="Pasteles" id="Pasteles" />
+          
+              <br />
+              <span>Total ------ 1064 $</span>
+              <br />
+              <button type="submit">Comprar</button>
+            </d>
+          </form>
+        </fieldset>
+      </div>
+    </main>
+    <script>
+         setTheme = () => {
+    let themeToggler = document.querySelector("#tema");
+    themeToggler.checked = false;
+    if (localStorage.getItem("darkmode")) {
+        console.log(localStorage.getItem("darkmode"))
+      document.documentElement.className = "dark";
+      themeToggler.checked = true;
+    } else {
+    }
+    themeToggler.addEventListener("change", function () {
+      if (this.checked) {
+        document.documentElement.className = "dark";
+        localStorage.setItem("darkmode", true);
+      } else {
+        localStorage.removeItem("darkmode");
+        document.documentElement.className = "light";
+      }
+    });
+  };
+
+  setTheme();
+    </script>
+  </body>
 </html>
